@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".result.YourResult">
+
+    <TextView
+        android:id="@+id/tv_your_result_title"
+        style="@style/TitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/your_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        style="@style/CardViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintBottom_toTopOf="@+id/btn_recalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_your_result_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_bmi_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/normal_label"
+                android:textColor="@color/normal_text"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!--
+                   <item name="fontWeight">600</item>
+                    <item name="android:textSize">45sp</item>
+                    <item name="android:textStyle">bold</item>
+                    <item name="android:textColor">@color/white</item>
+
+                  -->
+            <TextView
+                android:id="@+id/tv_bmi_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weight_value"
+                android:textColor="@color/white"
+                android:textSize="85sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_bmi_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/default_margin"
+                android:paddingBottom="@dimen/default_margin"
+                android:text="@string/underweight_msg"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.herco.bmicalculatorkotlin.shared.components.PrimaryButton
+        android:id="@+id/btn_recalculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        custom:label="@string/re_calculate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

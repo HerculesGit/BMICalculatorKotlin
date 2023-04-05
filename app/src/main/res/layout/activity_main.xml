@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".home.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/gender_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/card_view_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.herco.bmicalculatorkotlin.shared.components.CardButton
+            android:id="@+id/card_male"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            custom:gender="@string/male_gender"
+            custom:iconGender="@drawable/ic_male_gender_24"
+            custom:isChecked="false"
+            custom:showText="false" />
+
+        <com.herco.bmicalculatorkotlin.shared.components.CardButton
+            android:id="@+id/card_female"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            custom:gender="@string/female_gender"
+            custom:iconGender="@drawable/ic_female_gender_24"
+            custom:isChecked="true"
+            custom:showText="true" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/card_button_radius"
+        app:layout_constraintBottom_toTopOf="@+id/weight_and_age_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gender_container">
+
+        <LinearLayout
+            android:id="@+id/weight_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/unselected_card"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_height_label"
+                style="@style/LabelGrayTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/height_label" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    style="@style/ValueWhiteTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/height_sample_value" />
+
+                <TextView
+                    style="@style/LabelGrayTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/height_cm" />
+            </LinearLayout>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                android:hapticFeedbackEnabled="true"
+                android:value="177"
+                android:valueFrom="65"
+                android:valueTo="260"
+                app:haloColor="@color/primary_color"
+                app:labelBehavior="gone"
+                app:thumbColor="@color/primary_color"
+                app:tickColorInactive="@color/button_gray"
+                app:trackColorActive="@color/primary_color"
+                app:trackColorInactive="@color/button_gray" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/weight_and_age_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/primary_button_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_container">
+
+        <com.herco.bmicalculatorkotlin.shared.components.IncreaseDecreaseButton
+            android:id="@+id/increase_decrease_weight_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            custom:buttonLabel="@string/weight_label"
+            custom:increaseDefaultValue="@string/weight_value" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <com.herco.bmicalculatorkotlin.shared.components.IncreaseDecreaseButton
+            android:id="@+id/increase_decrease_age_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            custom:buttonLabel="@string/age_label"
+            custom:increaseDefaultValue="@string/age_value" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/primary_button_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_and_age_container">
+
+        <com.herco.bmicalculatorkotlin.shared.components.PrimaryButton
+            android:id="@+id/btn_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:label="@string/calculate" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

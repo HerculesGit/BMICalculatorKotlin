@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CardButton">
+        <attr name="gender" format="reference" />
+        <attr name="iconGender" format="integer" />
+        <attr name="isChecked" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PrimaryButton">
+        <attr name="label" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="IncreaseDecreaseButton">
+        <attr name="buttonLabel" format="string" />
+        <attr name="increaseDefaultValue" format="integer" />
+    </declare-styleable>
+
+</resources>

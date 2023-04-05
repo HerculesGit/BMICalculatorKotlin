@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="male_gender">Male</string>
+    <string name="female_gender">Female</string>
+    <string name="ic_gender_description">Icon of gender</string>
+    <string name="height_label">Height</string>
+    <string name="height_cm">cm</string>
+    <string name="height_sample_value">177</string>
+    <string name="calculate">Calculate</string>
+    <string name="weight_label">Weight</string>
+    <string name="weight_value">70</string>
+    <string name="age_label">Age</string>
+    <string name="age_value">20</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="your_result">Your Result</string>
+    <string name="re_calculate">Re-Calculate</string>
+    <string name="normal_label">NORMAL</string>
+
+    <!--  bmi result message  -->
+    <string name="underweight_msg">This is described as underweight.</string>
+    <string name="normal_weight_msg">This is described as the \'healthy range\'.</string>
+    <string name="overweight_msg">This is described as overweight.</string>
+    <string name="obesity_msg">This is described as obesity.</string>
+
+    <!--  bmi result status  -->
+    <string name="underweight_status">Underweight</string>
+    <string name="normal_weight_status">Normal</string>
+    <string name="overweight_status">Overweight</string>
+    <string name="obesity_status">Obesity</string>
+
+    <string name="go_to_last_screen">go to last screen</string>
+</resources>
