@@ -5,7 +5,7 @@
 
     <color name="background">#FF0A0E21</color>
     <color name="unselected_card">#FF1D1E33</color>
-    <color name="selected_card">#FF111328</color>
+    <color name="selected_card">@color/primary_color</color>
     <color name="button_gray">#FF4C4F5E</color>
     <color name="text_gray">#FFA2A3AB</color>
     <color name="primary_color">#FFEB1555</color>

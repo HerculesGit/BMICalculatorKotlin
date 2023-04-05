@@ -55,9 +55,12 @@ class CardButton @JvmOverloads constructor(
 
     fun setChecked(value: Boolean) {
         this.isChecked = value
-        val color = if (isChecked) R.color.selected_card else R.color.unselected_card
+        val bgCardColor = if (isChecked) R.color.selected_card else R.color.unselected_card
+        val textColor = if (isChecked) R.color.white else R.color.text_gray
         val carView = findViewById<CardView>(R.id.card_view)
-        carView.setCardBackgroundColor(ContextCompat.getColor(context, color))
+        carView.setCardBackgroundColor(ContextCompat.getColor(context, bgCardColor))
+        tvGender.setTextColor(ContextCompat.getColor(context, textColor))
+
         rebuild()
     }
 }
